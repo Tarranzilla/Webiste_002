@@ -71,10 +71,10 @@
             <nav class="nav-primary">
                 <ul>
                     <li><a class="nav-item-active" href="#">Início</a></li>
-                    <li><a href="#">Produtos</a></li>
-                    <li><a href="#">Soluções</a></li>
-                    <li><a href="#">Experiência</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="#section-002-id">Produtos</a></li>
+                    <li><a href="#section-003-id">Soluções</a></li>
+                    <li><a href="#section-004-id">Experiência</a></li>
+                    <li><a href="#section-005-id">Contato</a></li>
                 </ul>
             </nav>
 
@@ -100,7 +100,7 @@
         <main>
             <!-- Video de Entrada -->
             <section id="section-001-id" class="section-001-class">
-                <div class="video-text section-text">
+                <div class="header-text section-text">
                     <h1>Human Robotics</h1>
                     <h2>Nós fazemos robôs.</h2>
                 </div>
@@ -117,22 +117,52 @@
             </section>
 
             <!-- Produtos, Sistema Operacional e Aplicativos -->
-            <section id="section-002-id" class="section-002-class">
+            <section id="section-002-id" class="section-002-class side-faders">
                 <div class="product-text section-text">
                     <h1>Produtos</h1>
                     <h2>Robôs, Softwares e Aplicativos.</h2>
                 </div>
 
                 <div class="product-container">
-                    <div class="product-card"></div>
-                    <div class="product-card"></div>
-                    <div class="product-card"></div>
+                    <div class="product-card p-card-1">
+                        <div class="product-info">
+                            <h2>RobiOS</h2>
+                            <h3>Sistema Operacional Robótico</h3>
+                        </div>
+                        <img
+                            src="assets/imgs/robiOS/HumanRobotics_RobIOS_01_20221110.png"
+                            alt="Sistema Operacional Robios"
+                        />
+                        <button>Saiba Mais!</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h2>TOTEM</h2>
+                            <h3>Sistema de Atendimento Inteligente</h3>
+                        </div>
+                        <img
+                            src="assets/imgs/totem/HumanRobotics_RobiosTotem_01_20221110.553.png"
+                            alt="Robios + TOTEM"
+                        />
+                        <button>Saiba Mais!</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-info">
+                            <h2>QUEST</h2>
+                            <h3>Robô Autônomo Modular</h3>
+                        </div>
+                        <img
+                            src="assets/imgs/Quest/HumanRobotics_RobiosGo_20221110.png"
+                            alt="Robios + QUEST"
+                        />
+                        <button>Saiba Mais!</button>
+                    </div>
                 </div>
             </section>
 
             <!-- Soluções para Indústria, Varejo, Saúde e Eventos -->
             <section id="section-003-id" class="section-003-class">
-                <div class="video-text section-text">
+                <div class="solution-text section-text">
                     <h1>Soluções</h1>
                     <h2>Indústria</h2>
                     <h2>Varejo</h2>
@@ -152,7 +182,7 @@
             </section>
 
             <!-- Experiência (Projetos Já Realizados e Clientes) -->
-            <section id="section-004-id" class="section-004-class">
+            <section id="section-004-id" class="section-004-class side-faders">
                 <!-- 1o Container com as Imagens -->
                 <div class="scroll-container scroll1">
                     <!-- 10 Itens -->
@@ -222,6 +252,33 @@
                         negócio!
                     </h2>
                 </div>
+
+                <div class="form-container">
+                    <form id="form" action="index.html" method="post">
+                        <input type="text" placeholder="Nome" required />
+                        <input type="email" placeholder="E-mail" required />
+                        <input type="text" placeholder="Telefone" required />
+                        <input type="text" placeholder="Empresa" required />
+                        <input type="text" placeholder="Cargo" required />
+                        <select name="select" id="select">
+                            <option value="default" disabled selected>
+                                Selecione
+                            </option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        <textarea
+                            name="message"
+                            id="message"
+                            cols="30"
+                            rows="10"
+                            placeholder="Mensagem"
+                            required
+                        ></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
             </section>
         </main>
 
@@ -263,7 +320,7 @@
 
             <!-- Direitos Autorais do Site -->
             <div class="direitos-reservados">
-                <p>© 2021 Human Robotics. Todos os direitos reservados.</p>
+                <p>© 2023 Human Robotics. Todos os direitos reservados.</p>
             </div>
 
             <!-- Website Pragmata -->
