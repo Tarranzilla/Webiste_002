@@ -237,7 +237,7 @@ body {
 }
 
 .burger-class > * {
-    width: 5vh;
+    width: 3vh;
     height: 3px;
     border-radius: 2px;
 
