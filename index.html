@@ -117,45 +117,47 @@
             </section>
 
             <!-- Produtos, Sistema Operacional e Aplicativos -->
-            <section id="section-002-id" class="section-002-class side-faders">
+            <section id="section-002-id" class="section-002-class">
                 <div class="product-text section-text">
                     <h1>Produtos</h1>
                     <h2>Robôs, Softwares e Aplicativos.</h2>
                 </div>
 
-                <div class="product-container">
-                    <div class="product-card p-card-1">
-                        <div class="product-info">
-                            <h2>RobiOS</h2>
-                            <h3>Sistema Operacional Robótico</h3>
+                <div class="product-wrapper side-faders2">
+                    <div class="product-container">
+                        <div class="product-card p-card-1">
+                            <div class="product-info">
+                                <h2>RobiOS</h2>
+                                <h3>Sistema Operacional Robótico</h3>
+                            </div>
+                            <img
+                                src="assets/imgs/robiOS/HumanRobotics_RobIOS_01_20221110.png"
+                                alt="Sistema Operacional Robios"
+                            />
+                            <button>Saiba Mais!</button>
                         </div>
-                        <img
-                            src="assets/imgs/robiOS/HumanRobotics_RobIOS_01_20221110.png"
-                            alt="Sistema Operacional Robios"
-                        />
-                        <button>Saiba Mais!</button>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-info">
-                            <h2>TOTEM</h2>
-                            <h3>Sistema de Atendimento Inteligente</h3>
+                        <div class="product-card">
+                            <div class="product-info">
+                                <h2>TOTEM</h2>
+                                <h3>Sistema de Atendimento Inteligente</h3>
+                            </div>
+                            <img
+                                src="assets/imgs/totem/HumanRobotics_RobiosTotem_01_20221110.553.png"
+                                alt="Robios + TOTEM"
+                            />
+                            <button>Saiba Mais!</button>
                         </div>
-                        <img
-                            src="assets/imgs/totem/HumanRobotics_RobiosTotem_01_20221110.553.png"
-                            alt="Robios + TOTEM"
-                        />
-                        <button>Saiba Mais!</button>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-info">
-                            <h2>QUEST</h2>
-                            <h3>Robô Autônomo Modular</h3>
+                        <div class="product-card">
+                            <div class="product-info">
+                                <h2>QUEST</h2>
+                                <h3>Robô Autônomo Modular</h3>
+                            </div>
+                            <img
+                                src="assets/imgs/Quest/HumanRobotics_RobiosGo_20221110.png"
+                                alt="Robios + QUEST"
+                            />
+                            <button>Saiba Mais!</button>
                         </div>
-                        <img
-                            src="assets/imgs/Quest/HumanRobotics_RobiosGo_20221110.png"
-                            alt="Robios + QUEST"
-                        />
-                        <button>Saiba Mais!</button>
                     </div>
                 </div>
             </section>
@@ -255,7 +257,12 @@
 
                 <div class="form-container">
                     <form id="form" action="index.html" method="post">
-                        <input type="text" placeholder="Nome" required />
+                        <input
+                            type="text"
+                            placeholder="Nome"
+                            required
+                            class="first-input"
+                        />
                         <input type="email" placeholder="E-mail" required />
                         <input type="text" placeholder="Telefone" required />
                         <input type="text" placeholder="Empresa" required />
@@ -264,9 +271,9 @@
                             <option value="default" disabled selected>
                                 Selecione
                             </option>
-                            <option value="option1">Option 1</option>
-                            <option value="option2">Option 2</option>
-                            <option value="option3">Option 3</option>
+                            <option value="option1">Opção 1</option>
+                            <option value="option2">Opção 2</option>
+                            <option value="option3">Opção 3</option>
                         </select>
                         <textarea
                             name="message"

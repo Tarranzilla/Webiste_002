@@ -44,6 +44,11 @@ a {
     color: white;
 }
 
+html {
+    scroll-snap-type: block proximity;
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
 
@@ -300,8 +305,9 @@ section {
 
     margin-bottom: 5vh;
 
-    scroll-snap-type: block mandatory;
-    scroll-margin-top: 5vh;
+    scroll-behavior: smooth;
+    scroll-margin-block: 5vh;
+    scroll-snap-align: center;
 }
 
 .side-faders::before,
@@ -408,17 +414,74 @@ section {
 
 /* ==== Seção 2 ===== */
 
+.product-wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.side-faders2::before,
+.side-faders2::after {
+    content: "";
+    display: block;
+
+    position: absolute;
+
+    width: 5vw;
+    height: 80%;
+
+    background-image: linear-gradient(
+        90deg,
+        var(--color-tertiary) 60%,
+        var(--color-tertiary-faded) 70%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+}
+
+.side-faders2::before {
+    left: 49.5vw;
+
+    z-index: 2;
+}
+
+.side-faders2::after {
+    right: 18vw;
+
+    z-index: 2;
+
+    transform: rotate(180deg);
+}
+
 .product-container {
-    transform: translateX(40%);
+    position: absolute;
+    right: 20vw;
 
     display: flex;
     flex-direction: row;
 
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
-    width: 100%;
+    width: 28vw;
     height: 80%;
+
+    padding: 1vw;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    box-shadow: inset 0 5px 5px 5px var(--color-tertiary);
 }
 
 .product-card {
@@ -430,20 +493,27 @@ section {
     align-items: center;
     justify-content: center;
 
-    width: 30%;
+    flex-shrink: 0;
+
+    width: 25vw;
     height: 100%;
 
-    margin-inline: 2vw;
+    margin-inline: 1vw;
 
     background-color: var(--color-tertiary-light);
     border-radius: 10px;
 
+    scroll-snap-align: center;
+    scroll-margin: 1vw;
+
     overflow: hidden;
+
+    box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.8);
 }
 
 .product-card img {
     width: auto;
-    height: 100%;
+    height: 90%;
 
     object-fit: cover;
 }
@@ -632,12 +702,46 @@ form > * {
     padding: 10px;
 }
 
-form :nth-child(1) {
+::placeholder {
+    color: white;
+    opacity: 0.5;
+}
+
+.first-input {
     border-radius: 10px 10px 0 0;
 }
 
-form :last-child {
+form button {
     border-radius: 0 0 10px 10px;
+    color: var(--color-tertiary);
+    background-color: white;
+    font-weight: 700;
+
+    transition: transform 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+}
+
+form button:hover,
+form button:focus {
+    cursor: pointer;
+    transform: scale(105%);
+    border-radius: 10px 10px 10px 10px;
+}
+
+form select {
+    color: white;
+    opacity: 0.5;
+}
+
+form select :first-child {
+    color: white;
+    opacity: 0.5;
+}
+
+form option {
+    color: var(--color-tertiary);
+    opacity: 0.5;
+    background-color: white;
+    font-size: 14px;
 }
 
 /* ===== Rodapé ===== */
