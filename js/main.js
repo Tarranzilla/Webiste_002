@@ -18,6 +18,26 @@ burger.addEventListener("click", () => {
     }
 });
 
+// Menu dos Produtos
+
+const prodAnchor1 = document.getElementById("prod-anchor-1");
+const prodAnchor2 = document.getElementById("prod-anchor-2");
+
+const prodContainer1 = document.getElementById("prod-container-1");
+const prodCard1 = document.getElementById("prod-card-1");
+
+let cardWidth = prodCard1.clientWidth;
+
+prodAnchor1.addEventListener("click", (event) => {
+    event.preventDefault();
+    prodContainer1.scrollLeft += cardWidth;
+});
+
+prodAnchor2.addEventListener("click", (event) => {
+    event.preventDefault();
+    prodContainer1.scrollLeft -= cardWidth;
+});
+
 // Menu de Soluções
 
 const myAnchor1 = document.getElementById("anchor-1");
