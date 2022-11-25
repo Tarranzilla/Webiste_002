@@ -1,3 +1,8 @@
+// Imagem de Carregamento
+$(window).on("load", function () {
+    $(".loader-wrapper").fadeOut("slow");
+});
+
 // Hamburger e Menu Secundário
 
 const burger = document.getElementById("burger01");

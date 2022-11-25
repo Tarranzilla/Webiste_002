@@ -5,15 +5,34 @@
     --color-secondary: #0f0;
     --color-tertiary: #00f;
 
-    --scroll-item-ammount: 10;
-
     --color-tertiary-light: rgb(102, 102, 229);
     --color-tertiary-faded: rgba(0, 0, 255, 0.502);
+
+    --main-nav-height: 5vh;
+    --secondary-nav-height: 95vh;
+
+    --footer-height: 5vh;
+
+    --viewport-height: calc(
+        100vh - var(--main-nav-height) - var(--footer-height)
+    );
+
+    --scrollbar-width: 7px;
+
+    --general-width: calc(100vw - var(--scrollbar-width));
+    --general-h-spacer: 1vw;
+    --general-v-spacer: 1vh;
+
+    --card-width: 25vw;
+    --card-height: 50vh;
+
+    /* Experience Scrollers */
+    --scroll-item-ammount: 10;
 }
 
 ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -25,8 +44,8 @@
 }
 
 ::-webkit-scrollbar-track {
-    margin-block: 5vh;
-    margin-inline: 5vh;
+    margin-block: var(--main-nav-height) var(--footer-height);
+    margin-inline: var(--main-nav-height);
 }
 
 * {
@@ -35,9 +54,9 @@
 
     box-sizing: border-box;
 
-    font-family: "Roboto", sans-serif;
-
     scroll-behavior: smooth;
+
+    font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -60,7 +79,8 @@ body {
     flex-direction: column;
 
     align-items: center;
-    justify-content: center;
+    justify-items: center;
+    justify-content: center; /* Talvez Flex-Start? */
 
     overflow-x: hidden;
 
@@ -70,7 +90,7 @@ body {
 /* ===== Loading Screen ==== */
 
 .loader-wrapper {
-    z-index: 5;
+    z-index: 10;
 
     width: 100vw;
     height: 100vh;
@@ -86,7 +106,7 @@ body {
     align-content: center;
     justify-content: center;
 
-    background-color: var(--col-bg-01);
+    background-color: var(--color-tertiary);
 }
 
 .loader {
@@ -94,7 +114,7 @@ body {
     width: 30px;
     height: 30px;
     position: relative;
-    border: 4px solid var(--col-bg-02);
+    border: 4px solid white;
     animation: loader 2s infinite ease;
 }
 
@@ -102,7 +122,7 @@ body {
     vertical-align: top;
     display: inline-block;
     width: 100%;
-    background-color: var(--col-bg-02);
+    background-color: white;
     animation: loader-inner 2s infinite ease-in;
 }
 
@@ -153,20 +173,21 @@ body {
 /* ===== Navbar Principal e Secundária ==== */
 
 .nav-container {
+    z-index: 4;
+
     position: fixed;
     top: 0;
 
-    z-index: 3;
     display: flex;
     flex-direction: row;
 
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 
-    width: 100%;
-    height: 5vh;
+    width: 100vw;
+    height: var(--main-nav-height);
 
-    padding-inline: 5vh;
+    padding-inline: var(--main-nav-height);
 
     background-color: var(--color-tertiary);
 }
@@ -178,8 +199,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    width: 100%;
-    height: 5vh;
+    width: 50%;
+    height: 100%;
 }
 
 .nav-item-active::before {
@@ -243,10 +264,11 @@ body {
 
     position: absolute;
 
-    height: 90vh;
-    width: 100%;
+    height: var(--secondary-nav-height);
+    width: 100vw;
 
-    top: 5vh;
+    top: var(--main-nav-height);
+    left: 0;
 
     background-color: var(--color-tertiary);
 
@@ -280,7 +302,7 @@ body {
 }
 
 .nav-secondary a {
-    width: 33%;
+    width: 25%;
     height: 25%;
     font-size: 24px;
 }
@@ -298,8 +320,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    width: 5vh;
-    height: 5vh;
+    width: var(--main-nav-height);
+    height: 100%;
 }
 
 .logo-container > * {
@@ -375,7 +397,7 @@ body {
 main {
     height: auto;
     width: 100%;
-    margin-top: 5vh;
+    margin-top: var(--main-nav-height);
 }
 
 section {
@@ -388,15 +410,42 @@ section {
     position: relative;
 
     width: 100%;
-    height: 90vh;
+    height: var(--viewport-height);
 
-    margin-bottom: 5vh;
+    margin-bottom: var(--main-nav-height);
 
     scroll-behavior: smooth;
-    scroll-margin-block: 5vh;
+    scroll-margin-block: var(--main-nav-height) var(--footer-height);
     scroll-snap-align: center;
 
     overflow: hidden;
+}
+
+.grid-item {
+    grid-area: g1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.section-grid {
+    width: 100vw;
+    height: 90vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    grid-template-areas:
+        "g1 g1 g1"
+        "g1 g1 g1"
+        "g1 g1 g1";
+
+    background-color: var(--color-tertiary);
 }
 
 .side-faders::before,
@@ -407,7 +456,7 @@ section {
     position: absolute;
 
     width: 20vw;
-    height: calc(100% + 2px);
+    height: 100%;
 
     background-image: linear-gradient(
         90deg,
@@ -460,8 +509,8 @@ section {
 /* ===== Seção 1 ==== */
 
 .video-container {
-    width: 1913px;
-    height: 1000px;
+    width: 100%;
+    height: 100%;
 
     position: relative;
 
@@ -469,6 +518,7 @@ section {
     flex-direction: row;
 
     align-items: center;
+    justify-items: ce;
     justify-content: start;
 
     overflow: auto;
@@ -480,12 +530,15 @@ section {
 
 .video-overlay {
     z-index: 1;
+
     width: 100%;
-    height: calc(
-        90vh - 7px
-    ); /* tamanho total da div - o tamanho da scrollbar */
+    height: calc(var(--viewport-height) - var(--scrollbar-width));
+
     top: 0;
+    left: 0;
+
     position: absolute;
+
     background-color: white;
     filter: contrast(30%) opacity(30%);
 
@@ -515,6 +568,8 @@ section {
 
 /* ==== Seção 2 ===== */
 
+/* é preciso reconstruir esta classe, ela poderia envolver o product container e
+   entao poderia abraçar os dois side-faders2 de maneira mais responsiva */
 .product-wrapper {
     width: 100%;
     height: 100%;
@@ -527,8 +582,6 @@ section {
     justify-content: center;
 
     position: relative;
-
-    overflow-y: visible;
 }
 
 .product-buttons {
@@ -546,6 +599,66 @@ section {
 
     right: 25vw;
     bottom: 4vh;
+}
+
+/* Corrigir Side Faders após arrumar o product-wrapper */
+.side-faders2::before,
+.side-faders2::after {
+    content: "";
+    display: block;
+
+    position: absolute;
+
+    width: 5vw;
+    height: 80%;
+
+    background-image: linear-gradient(
+        90deg,
+        var(--color-tertiary) 60%,
+        var(--color-tertiary-faded) 70%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+}
+
+.side-faders2::before {
+    left: 49.5vw;
+
+    z-index: 3;
+}
+
+.side-faders2::after {
+    right: 17vw;
+
+    z-index: 2;
+
+    transform: rotate(180deg);
+}
+
+.product-container {
+    z-index: 2;
+
+    position: absolute;
+    right: 20vw;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    width: calc(var(--card-width) + 2vw);
+    height: 80%;
+
+    overflow-y: visible;
+    overflow-x: scroll;
+
+    scroll-snap-type: x mandatory;
+
+    box-shadow: inset 0 5px 5px 5px var(--color-tertiary);
+    background-color: transparent;
+    perspective: 3500px;
 }
 
 .product-buttons button {
@@ -593,117 +706,69 @@ section {
     transform: translateY(1px);
 }
 
-.side-faders2::before,
-.side-faders2::after {
-    content: "";
-    display: block;
-
-    position: absolute;
-
-    width: 5vw;
-    height: 80%;
-
-    background-image: linear-gradient(
-        90deg,
-        var(--color-tertiary) 60%,
-        var(--color-tertiary-faded) 70%,
-        transparent 100%
-    );
-
-    pointer-events: none;
-}
-
-.side-faders2::before {
-    left: 49.5vw;
-
-    z-index: 2;
-}
-
-.side-faders2::after {
-    right: 18vw;
-
-    z-index: 2;
-
-    transform: rotate(180deg);
-}
-
-.product-container {
-    position: absolute;
-    right: 20vw;
-
-    display: flex;
-    flex-direction: row;
-
-    align-items: center;
-    justify-content: flex-start;
-
-    width: 28vw;
-    height: 80%;
-
-    padding: 2vw;
-
-    overflow-y: visible;
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-
-    box-shadow: inset 0 5px 5px 5px var(--color-tertiary);
-
-    perspective: 3500px;
-}
-
 .product-card {
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
     flex-shrink: 0;
 
-    width: 25vw;
-    height: 100%;
+    width: var(--card-width);
+    height: 90%;
 
     margin-inline: 1vw;
 
-    background-color: var(--color-tertiary-light);
-    border-radius: 10px;
-
     scroll-snap-align: center;
     scroll-margin: 1vw;
-
-    overflow: hidden;
 
     transform-style: preserve-3d;
     transition: transform 0.8s ease-in-out;
 
     box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.8);
+    background-color: transparent;
+    border-radius: 10px;
 }
 
 .product-card-front,
 .product-card-back {
     position: absolute;
-    top: 0;
-    left: 0;
 
-    width: 100%;
+    width: var(--card-width);
     height: 100%;
 
-    background-color: white;
+    display: flex;
+    flex-direction: column;
 
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+
+    backface-visibility: hidden;
+    overflow: hidden;
+
+    border-radius: 10px;
+}
+
+.product-card-front {
+    background-color: black;
+}
+
+.product-card-back {
+    z-index: 1;
+    background-color: white;
     transform: rotateY(180deg);
 }
 
 .product-card img {
-    width: auto;
+    width: 100%;
     height: 90%;
+
+    margin-top: 10%;
 
     object-fit: cover;
 }
 
 .p-card-1 img {
+    margin-top: 40%;
+
     width: 100%;
     height: auto;
 
@@ -1055,7 +1120,7 @@ footer {
 
 @media screen and (max-width: 1000px) {
     .nav-container {
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .side-faders2::before,
