@@ -1057,6 +1057,42 @@ footer {
     .nav-container {
         justify-content: space-between;
     }
+
+    .side-faders2::before,
+    .side-faders2::after {
+        content: "";
+        display: block;
+
+        position: absolute;
+
+        width: 5vw;
+        height: 80%;
+        top: 20vh;
+
+        background-image: linear-gradient(
+            90deg,
+            var(--color-tertiary) 60%,
+            var(--color-tertiary-faded) 70%,
+            transparent 100%
+        );
+
+        pointer-events: none;
+    }
+
+    .side-faders2::before {
+        left: 6vw;
+
+        z-index: 2;
+    }
+
+    .side-faders2::after {
+        right: 6vw;
+
+        z-index: 2;
+
+        transform: rotate(180deg);
+    }
+
     .section-text {
         z-index: 2;
         position: absolute;
@@ -1064,6 +1100,39 @@ footer {
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: left;
+        width: 80vw;
+    }
+
+    .product-text {
+        top: 10vh;
+    }
+
+    .contact-text {
+        top: 10vh;
+    }
+
+    .product-container {
+        width: 80vw;
+        top: 20vh;
+        right: auto;
+        left: auto;
+    }
+
+    .product-card {
+        width: 80vw;
+    }
+
+    .product-buttons {
+        z-index: 3;
+        width: 95vw;
+        right: auto;
+        left: auto;
+        bottom: 2.5vh;
+    }
+
+    .product-buttons button {
+        width: 20vw;
+        height: 3vh;
     }
 
     .section-text h1 {
@@ -1106,6 +1175,53 @@ footer {
         height: 100%;
 
         object-fit: cover;
+    }
+
+    .scroll1 {
+        top: 5vh;
+    }
+
+    .scroll2 {
+        bottom: 5vh;
+    }
+
+    .scroll-item {
+        width: 40vw;
+        height: 30vh;
+
+        margin-inline: 2vw;
+
+        background-color: var(--color-tertiary-light);
+
+        flex-shrink: 0;
+        border-radius: 10px;
+    }
+
+    @keyframes scroll_right {
+        0% {
+            transform: translateX(
+                calc(
+                    (-40vw * (var(--scroll-item-ammount))) +
+                        (var(--scroll-item-ammount) * -4vw)
+                )
+            );
+        }
+
+        100% {
+            transform: translateX(
+                calc(
+                    (-40vw * (var(--scroll-item-ammount)) / 2) +
+                        (var(--scroll-item-ammount) / 2 * -4vw)
+                )
+            );
+        }
+    }
+
+    .form-container {
+        width: 80vw;
+        height: 70%;
+
+        top: 22.5vh;
     }
 
     footer {
