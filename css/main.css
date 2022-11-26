@@ -2,7 +2,7 @@
 
 :root {
     --color-primary: #f00;
-    --color-secondary: #0f0;
+    --color-secondary: rgb(223, 134, 231);
     --color-tertiary: #00f;
 
     --color-tertiary-light: rgb(102, 102, 229);
@@ -834,8 +834,22 @@ section {
     font-weight: 200;
 }
 
+.btn-flip-back:hover {
+    background-color: var(--color-tertiary) !important;
+    color: white !important;
+}
+
+.btn-buy:hover {
+    background-color: var(--color-secondary) !important;
+    color: white !important;
+}
+
 .card-active {
     transform: rotateY(180deg);
+}
+
+.flip-btn-active {
+    pointer-events: none;
 }
 
 /** ===== Seção 3 ===== */
@@ -1153,6 +1167,12 @@ footer {
         justify-content: center;
     }
 
+    .nav-secondary a {
+        width: 60%;
+        height: 50%;
+        font-size: 24px;
+    }
+
     .side-faders2::before,
     .side-faders2::after {
         content: "";
@@ -1266,7 +1286,7 @@ footer {
     }
 
     .video-container video {
-        width: auto;
+        width: 100%;
         height: 100%;
 
         object-fit: cover;

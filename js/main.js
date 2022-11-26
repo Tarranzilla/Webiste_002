@@ -55,16 +55,41 @@ const flip_btn3 = document.getElementById("flip-btn-3");
 flip_btn1.addEventListener("click", (event) => {
     event.preventDefault();
     prodCard1.classList.toggle("card-active");
+    flip_btn1.classList.toggle("flip-btn-active");
 });
 
 flip_btn2.addEventListener("click", (event) => {
     event.preventDefault();
     prodCard2.classList.toggle("card-active");
+    flip_btn2.classList.toggle("flip-btn-active");
 });
 
 flip_btn3.addEventListener("click", (event) => {
     event.preventDefault();
     prodCard3.classList.toggle("card-active");
+    flip_btn3.classList.toggle("flip-btn-active");
+});
+
+const flipBack_btn_1 = document.getElementById("flip-back-btn-1");
+const flipBack_btn_2 = document.getElementById("flip-back-btn-2");
+const flipBack_btn_3 = document.getElementById("flip-back-btn-3");
+
+flipBack_btn_1.addEventListener("click", (event) => {
+    event.preventDefault();
+    prodCard1.classList.toggle("card-active");
+    flip_btn1.classList.toggle("flip-btn-active");
+});
+
+flipBack_btn_2.addEventListener("click", (event) => {
+    event.preventDefault();
+    prodCard2.classList.toggle("card-active");
+    flip_btn2.classList.toggle("flip-btn-active");
+});
+
+flipBack_btn_3.addEventListener("click", (event) => {
+    event.preventDefault();
+    prodCard3.classList.toggle("card-active");
+    flip_btn3.classList.toggle("flip-btn-active");
 });
 
 // Menu de Soluções
