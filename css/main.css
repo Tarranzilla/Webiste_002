@@ -392,6 +392,55 @@ body {
     transform: translateX(0);
 }
 
+/* Menu Balancer */
+.menu-balancer {
+    width: 5vw;
+    height: 100%;
+
+    background-color: transparent;
+}
+
+/* Lang Selector */
+.lang-selector {
+    width: 5vw;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-selector a {
+    margin-inline: 4px;
+    transition: color 0.3s ease-in-out;
+}
+
+.lang-selector a:hover {
+    color: var(--color-secondary);
+}
+
+.lang-selector svg {
+    fill: white;
+    width: 20px;
+    height: 20px;
+}
+
+.lang-divider {
+    width: 2px;
+    height: 16px;
+    background-color: white;
+}
+
+.lang-selected {
+    pointer-events: none;
+}
+
+.lang-unselected {
+    color: gray;
+}
+
 /* logo */
 
 .logo-container {
