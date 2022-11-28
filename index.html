@@ -47,6 +47,10 @@
 
         -->
 
+        <!-- ThreeJs e Globe -->
+        <script src="//unpkg.com/three"></script>
+        <script src="//unpkg.com/globe.gl"></script>
+
         <!-- CSS Nativo -->
         <link href="css/main.css" rel="stylesheet" />
 
@@ -57,13 +61,28 @@
         />
 
         <!-- JS Nativo -->
+        <script src="js/loading.js"></script>
         <script defer src="js/main.js"></script>
+        <script defer src="js/lgpd.js"></script>
+        <script defer src="js/observers.js"></script>
     </head>
     <body>
         <body>
+            <!-- Carregador de Página -->
             <div class="loader-wrapper">
                 <span class="loader"><span class="loader-inner"></span></span>
             </div>
+
+            <!-- Banner LGPD -->
+            <div id="lgpd-cont" class="lgpd">
+                <p>
+                    Este site utiliza cookies para melhorar sua experiência de
+                    navegação. Ao continuar navegando, você concorda com a nossa
+                    <a href="#">Política de Privacidade</a>.
+                </p>
+                <button id="lgpd-but" class="button-lgpd">OK</button>
+            </div>
+
             <!-- Navbar -->
             <div class="nav-container">
             <!-- Logo Container -->
@@ -74,11 +93,11 @@
             <!-- Nav Primária -->
             <nav class="nav-primary">
                 <ul>
-                    <li><a class="nav-item-active" href="#">Início</a></li>
-                    <li><a href="#section-002-id">Produtos</a></li>
-                    <li><a href="#section-003-id">Soluções</a></li>
-                    <li><a href="#section-004-id">Experiência</a></li>
-                    <li><a href="#section-005-id">Contato</a></li>
+                    <li><a id="menu_anchor_01" href="#">Início</a></li>
+                    <li><a id="menu_anchor_02" href="#section-002-id">Produtos</a></li>
+                    <li><a id="menu_anchor_03" href="#section-003-id">Soluções</a></li>
+                    <li><a id="menu_anchor_04" href="#section-004-id">Experiência</a></li>
+                    <li><a id="menu_anchor_05" href="#section-005-id">Contato</a></li>
                 </ul>
             </nav>
 
@@ -103,7 +122,7 @@
         <!-- Conteúdo Principal -->
         <main>
             <!-- Video de Entrada -->
-            <section id="section-001-id" class="section-001-class">
+            <section id="section-001-id" class="section-001-class section-observe">
                 <div class="header-text section-text">
                     <h1>Human Robotics</h1>
                     <h2>Nós fazemos robôs.</h2>
@@ -121,7 +140,7 @@
             </section>
 
             <!-- Produtos, Sistema Operacional e Aplicativos -->
-            <section id="section-002-id" class="section-002-class">
+            <section id="section-002-id" class="section-002-class section-observe">
                 <div class="product-text section-text">
                     <h1>Produtos</h1>
                     <h2>Robôs, Softwares e Aplicativos.</h2>
@@ -269,7 +288,7 @@
             </section>
 
             <!-- Soluções para Indústria, Varejo, Saúde e Eventos -->
-            <section id="section-003-id" class="section-003-class">
+            <section id="section-003-id" class="section-003-class section-observe">
                 <div class="solution-text section-text">
                     <h1>Soluções</h1>
                     <h2>
@@ -329,7 +348,7 @@
             </section>
 
             <!-- Experiência (Projetos Já Realizados e Clientes) -->
-            <section id="section-004-id" class="section-004-class side-faders">
+            <section id="section-004-id" class="section-004-class side-faders section-observe">
                 <!-- 1o Container com as Imagens -->
                 <div class="scroll-container scroll1">
                     <!-- 10 Itens -->
@@ -391,7 +410,7 @@
             </section>
 
             <!-- Contato (email, telefone, localização e newsletter) -->
-            <section id="section-005-id" class="section-005-class">
+            <section id="section-005-id" class="section-005-class section-observe">
                 <div class="contact-text section-text">
                     <h1>Contato</h1>
                     <h2>

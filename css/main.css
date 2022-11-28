@@ -172,6 +172,52 @@ body {
     }
 }
 
+/* ===== LGPD ==== */
+
+.lgpd {
+    z-index: 10;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--color-tertiary);
+    color: white;
+
+    transition: trasnform 0.5s ease-in-out;
+}
+
+.lgpd p {
+    text-align: center;
+    width: fit-content;
+}
+
+.button-lgpd {
+    width: 300px;
+    height: 30px;
+
+    margin-top: 5vh;
+}
+
+.lgpd-inactive {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.lgpd-active {
+    opacity: 1;
+    transform: none;
+}
+
 /* ===== Navbar Principal e Secundária ==== */
 
 .nav-container {
