@@ -91,6 +91,7 @@ body {
 
 .body-overflow {
     overflow: hidden;
+    margin-right: var(--scrollbar-width);
 }
 
 /* ===== Loading Screen ==== */
