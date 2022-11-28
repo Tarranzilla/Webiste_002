@@ -17,6 +17,8 @@
         100vh - var(--main-nav-height) - var(--footer-height)
     );
 
+    --viewport-height-mobile: calc(100vh - var(--main-nav-height));
+
     --scrollbar-width: 7px;
 
     --general-width: calc(100vw - var(--scrollbar-width));
@@ -473,6 +475,32 @@ body {
 
 /* ===== Conteúdo ==== */
 
+.tooltips {
+    background-color: white;
+    color: var(--color-tertiary);
+    border-radius: 5px;
+
+    padding: 4px;
+    margin: 8px;
+    position: relative;
+}
+
+.tooltips::before {
+    content: "";
+    position: absolute;
+
+    z-index: -1;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: white;
+    transform: rotate(45deg);
+
+    top: calc(50% - 4px);
+    right: -4px;
+}
+
 main {
     height: auto;
     width: 100%;
@@ -664,10 +692,10 @@ section {
 }
 
 .product-buttons {
-    z-index: 2;
+    z-index: 4;
     position: absolute;
 
-    width: 18vw;
+    width: calc(var(--card-width) + 14vh);
     height: auto;
 
     display: flex;
@@ -676,8 +704,8 @@ section {
     align-items: center;
     justify-content: space-between;
 
-    right: 25vw;
-    bottom: 4vh;
+    right: 17.5vw;
+    bottom: calc(50% - 3vh);
 }
 
 /* Corrigir Side Faders após arrumar o product-wrapper */
@@ -741,8 +769,8 @@ section {
 }
 
 .product-buttons button {
-    width: 8vw;
-    height: 3vh;
+    width: 6vh;
+    height: 6vh;
 
     display: flex;
     flex-direction: row;
@@ -750,12 +778,12 @@ section {
     align-items: center;
     justify-content: center;
 
-    border-radius: 10px;
+    border-radius: 50%;
     border: 1px solid white;
 
     color: white;
 
-    background-color: transparent;
+    background-color: var(--color-tertiary);
 
     cursor: pointer;
 }
@@ -997,6 +1025,16 @@ section {
     height: auto;
 
     margin-bottom: 2vh;
+}
+
+.product-card-back ul {
+    width: 70%;
+}
+
+.product-card-back li {
+    margin-block: 0 1vh;
+    font-size: 16px;
+    font-weight: 200;
 }
 
 .product-card-back button {
@@ -1241,6 +1279,11 @@ footer {
 /* ===== Media Queries ==== */
 
 @media screen and (max-width: 1000px) {
+    .body-overflow {
+        overflow: hidden;
+        margin-right: 0;
+    }
+
     .nav-container {
         justify-content: center;
     }
@@ -1249,6 +1292,15 @@ footer {
         width: 60%;
         height: 50%;
         font-size: 24px;
+    }
+
+    section {
+        top: var(--main-nav-height);
+        height: var(--viewport-height-mobile);
+        margin-bottom: 0;
+        scroll-behavior: smooth;
+        scroll-margin-block: var(--main-nav-height) 0;
+        scroll-snap-align: center;
     }
 
     .side-faders2::before,
@@ -1315,17 +1367,33 @@ footer {
         width: var(--card-width-mobile);
     }
 
+    .p-card-1 img {
+        margin-top: 60%;
+
+        width: 100%;
+        height: auto;
+
+        object-fit: cover;
+    }
+
     .product-buttons {
         z-index: 3;
         width: 95vw;
         right: auto;
         left: auto;
-        bottom: 2.5vh;
+        bottom: 30vh;
     }
 
     .product-buttons button {
-        width: 20vw;
-        height: 3vh;
+        width: 6vh;
+        height: 6vh;
+    }
+
+    .product-card-back button {
+        position: inherit;
+        width: 45%;
+        border: 1px solid var(--color-tertiary);
+        color: var(--color-tertiary);
     }
 
     .section-text h1 {
@@ -1356,7 +1424,7 @@ footer {
     .video-overlay {
         z-index: 1;
         width: 100%;
-        height: 90vh;
+        height: 95vh;
         top: 0;
         position: absolute;
         background-color: white;

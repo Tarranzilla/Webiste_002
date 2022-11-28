@@ -43,6 +43,20 @@ prodAnchor2.addEventListener("click", (event) => {
     prodContainer1.scrollLeft -= cardWidth;
 });
 
+// Tooltips dos Produtos
+const tooltip_01 = document.getElementById("tooltip-01");
+const tooltip_02 = document.getElementById("tooltip-02");
+
+// Pass the button, the tooltip, and some options, and Popper will do the
+// magic positioning for you:
+Popper.createPopper(prodAnchor1, tooltip_01, {
+    placement: "right",
+});
+
+Popper.createPopper(prodAnchor2, tooltip_02, {
+    placement: "left",
+});
+
 // Card Flip
 
 const flip_btn1 = document.getElementById("flip-btn-1");

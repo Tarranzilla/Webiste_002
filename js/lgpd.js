@@ -16,8 +16,6 @@ const lgpdUrl =
 
 const lgpdContainer = document.getElementById("lgpd-cont");
 const lgpdButton = document.getElementById("lgpd-but");
-console.log(lgpdContainer);
-console.log(lgpdButton);
 
 lgpdButton.addEventListener("click", () => {
     fecharLGPD();

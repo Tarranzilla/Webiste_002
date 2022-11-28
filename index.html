@@ -51,6 +51,9 @@
         <script src="//unpkg.com/three"></script>
         <script src="//unpkg.com/globe.gl"></script>
 
+        <!-- Popper JS Production version -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+
         <!-- CSS Nativo -->
         <link href="css/main.css" rel="stylesheet" />
 
@@ -102,6 +105,12 @@
                 </ul>
             </nav>
 
+            <!-- Seletor de Idioma -->
+            <div class="lang-selector">
+                <a href="index.html">PT</a>
+                <a href="index-en.html">EN</a>
+            </div>
+
             <!-- Botão Burger -->
             <div id="burger01" class="burger-class">
                 <div class="burger_line1"></div>
@@ -148,7 +157,14 @@
                 </div>
 
                 <div class="product-buttons">
-                    <button id="prod-anchor-2">
+
+                    <!-- 
+                    <div id="tooltip-2" class="tooltips" role="tooltip">
+                        Anterior
+                    </div>
+                     -->
+
+                    <button id="prod-anchor-2" aria-describedby="tooltip">
                         <svg
                             class="product-button-icon-1"
                             xmlns="http://www.w3.org/2000/svg"
@@ -159,10 +175,15 @@
                                 d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"
                             />
                         </svg>
-                        Anterior
                     </button>
-                    <button id="prod-anchor-1">
+
+                    <!--
+                    <div id="tooltip-1" class="tooltips" role="tooltip">
                         Próximo
+                    </div>
+                    -->
+
+                    <button id="prod-anchor-1" aria-describedby="tooltip">
                         <svg
                             class="product-button-icon-2"
                             xmlns="http://www.w3.org/2000/svg"
