@@ -16,10 +16,12 @@ const lgpdUrl =
 
 const lgpdContainer = document.getElementById("lgpd-cont");
 const lgpdButton = document.getElementById("lgpd-but");
+console.log(lgpdContainer);
+console.log(lgpdButton);
 
-lgpdButton.onclick = function () {
+lgpdButton.addEventListener("click", () => {
     fecharLGPD();
-};
+});
 
 if (!lsContent) {
     lgpdContainer.classList.add("lgpd-active");
@@ -33,6 +35,7 @@ async function fecharLGPD() {
     if (lgpdValid == true) {
         lgpdContainer.classList.add("lgpd-inactive");
         lgpdContainer.classList.remove("lgpd-active");
+
         console.log("Banner LGPD Fechado");
 
         let result = await fetch(lgpdUrl);

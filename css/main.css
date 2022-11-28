@@ -193,7 +193,10 @@ body {
     background-color: var(--color-tertiary);
     color: white;
 
-    transition: trasnform 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.5s ease-in-out;
 }
 
 .lgpd p {
@@ -209,13 +212,14 @@ body {
 }
 
 .lgpd-inactive {
-    transform: translateY(100%);
     opacity: 0;
+    pointer-events: none;
 }
 
 .lgpd-active {
     opacity: 1;
     transform: none;
+    pointer-events: all;
 }
 
 /* ===== Navbar Principal e Secundária ==== */
