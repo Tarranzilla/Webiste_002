@@ -24,6 +24,7 @@ lgpdButton.addEventListener("click", () => {
 });
 
 if (!lsContent) {
+    document.body.classList.add("body-overflow");
     lgpdContainer.classList.add("lgpd-active");
     lgpdContainer.classList.remove("lgpd-inactive");
     console.log("Banner LGPD Aberto");
@@ -35,6 +36,7 @@ async function fecharLGPD() {
     if (lgpdValid == true) {
         lgpdContainer.classList.add("lgpd-inactive");
         lgpdContainer.classList.remove("lgpd-active");
+        document.body.classList.remove("body-overflow");
 
         console.log("Banner LGPD Fechado");
 

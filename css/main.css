@@ -89,6 +89,10 @@ body {
     background: var(--color-tertiary);
 }
 
+.body-overflow {
+    overflow: hidden;
+}
+
 /* ===== Loading Screen ==== */
 
 .loader-wrapper {
@@ -204,11 +208,31 @@ body {
     width: fit-content;
 }
 
+.lgpd a {
+    color: var(--color-secondary);
+    text-transform: initial;
+    text-decoration: underline;
+}
+
 .button-lgpd {
     width: 300px;
     height: 30px;
 
-    margin-top: 5vh;
+    margin-top: 2vh;
+
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+.button-lgpd:hover {
+    cursor: pointer;
+
+    background-color: white;
+    color: var(--color-tertiary);
 }
 
 .lgpd-inactive {
