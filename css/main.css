@@ -790,6 +790,7 @@ section {
     width: var(--card-width);
     height: 90%;
 
+    margin-block: 1vw;
     margin-inline: 1vw;
 
     scroll-snap-align: center;
