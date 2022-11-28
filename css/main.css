@@ -318,9 +318,10 @@ body {
 
     width: 0;
     height: 6px;
-    background: white;
+    background-color: var(--color-tertiary-faded);
     transform-origin: center;
-    transition: width 0.3s;
+
+    transition: background-color 0.3s, width 0.3s;
 }
 
 .nav-primary a:hover::before,
@@ -329,6 +330,7 @@ body {
 .nav-secondary a:focus::before {
     width: 100%;
     transition: width 0.3s;
+    background-color: white;
 }
 
 .nav-secondary {
@@ -1180,7 +1182,7 @@ footer {
     justify-content: space-between;
     padding-inline: 5vh;
 
-    width: 100%;
+    width: var(--general-width);
     height: 5vh;
 
     background-color: var(--color-tertiary);
