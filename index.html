@@ -115,15 +115,25 @@
     <body>
         <!-- PWA Loader -->
         <script>
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", function () {
-                    navigator.serviceWorker
-                        .register("sw.js")
-                        .then((res) => console.log("service worker registered"))
-                        .catch((err) => console.log("service worker not registered", err));
-                });
+            // Don't register the service worker
+            // until the page has fully loaded
+            window.addEventListener('load', () => {
+              // Is service worker available?
+              if ('serviceWorker' in navigator) {
+              // Register a service worker hosted at the root of the
+             // site using the default scope.
+            navigator.serviceWorker.register('service-worker.js').then((registration) => {
+            console.log('Service worker registration succeeded:', registration);
+            }, /*catch*/ (error) => {
+            console.error(`Service worker registration failed: ${error}`);
+            });
+            
+            } else {
+            console.error('Service workers are not supported.');
             }
-        </script>
+            });
+          </script>
+
         <!-- Carregador de Página -->
         <div class="loader-wrapper">
             <span class="loader"><span class="loader-inner"></span></span>
