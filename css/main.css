@@ -1099,6 +1099,7 @@ section {
 
     flex-shrink: 0;
 
+    scroll-snap-type: start;
     object-fit: cover;
 }
 
@@ -1416,6 +1417,14 @@ footer {
 .direitos-reservados {
     margin-inline: 10vw;
     color: white;
+}
+
+.desenvolvido-por p {
+    color: white;
+}
+
+.desenvolvido-por a {
+    color: var(--color-tertiary-light);
 }
 
 /* ===== Media Queries ==== */
