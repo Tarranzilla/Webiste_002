@@ -1066,6 +1066,10 @@ section {
 
 /** ===== Seção 3 ===== */
 
+.section-003-class {
+    border-radius: 20px;
+}
+
 .section-003-class .video-container {
     width: 100%;
     height: 100%;
@@ -1083,6 +1087,10 @@ section {
 
     scroll-snap-type: start;
     scroll-behavior: smooth;
+}
+
+.section-003-class .video-container::-webkit-scrollbar {
+    display: none;
 }
 
 .section-003-class video {
