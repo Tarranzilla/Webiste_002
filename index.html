@@ -113,6 +113,17 @@
         <script defer src="js/observers.js"></script>
     </head>
     <body>
+        <!-- PWA Loader -->
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", function () {
+                    navigator.serviceWorker
+                        .register("sw.js")
+                        .then((res) => console.log("service worker registered"))
+                        .catch((err) => console.log("service worker not registered", err));
+                });
+            }
+        </script>
         <!-- Carregador de Página -->
         <div class="loader-wrapper">
             <span class="loader"><span class="loader-inner"></span></span>
